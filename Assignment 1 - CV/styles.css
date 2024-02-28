@@ -14,21 +14,18 @@ html {
 }
 body {
     font-family: Inter, sans-serif;
-    background-color: black;
+    background-color: darkgrey;
     color: white;
 }
 
-/* common styles */
-/* Apply styles to all images */
 img {
-    width: 100%;
+    width: 90%;
     border-radius: 50%;
-    transition: transform 0.3s ease; /* Add smooth transition */
+    transition: transform 0.3s ease; 
 }
 
-/* Scale up the image on hover */
 img:hover {
-    transform: scale(1.1); /* Increase the scale factor for desired zoom level */
+    transform: scale(1.1); 
 }
 
 a {
@@ -64,7 +61,6 @@ a {
     font-weight: 400;
 }
 
-/* layouts */
 .container {
     max-width: 1000px;
     width: 90%;
@@ -114,7 +110,6 @@ a {
     }
 }
 
-/* profile */
 .profile_container {
     display: flex;
     gap: 2rem;
@@ -157,14 +152,12 @@ a {
     }
 }
 
-/* Expertise */
 .skills_list {
     margin-top: 1rem;
     margin-left: 2rem;
     line-height: 2;
 }
 
-/* Ref  */
 .ref_item {
     margin-top: 2rem;
 }
@@ -173,25 +166,22 @@ a {
     font-weight: 700;
 }
 
-/* eduction */
 .edu_item {
     margin-top: 2rem;
 }
 
-/* certification */
 .certification_item {
     margin-top: 2rem;
 }
-/* exp */
+
 .exp_item {
     margin-top: 2rem;
 }
 
-/* awards */
 .awards_item {
     margin-top: 2rem;
 }
-/* Interests */
+
 .interest_items {
     margin-top: 2rem;
     display: flex;
@@ -212,7 +202,6 @@ a {
     width: 2rem;
 }
 
-/* socials */
 .social_items {
     margin-top: 2rem;
 }
@@ -251,20 +240,31 @@ a {
     width: 2rem;
 }
 
-/* Progressive Bars */
 .skills_list li {
     position: relative;
     display: flex;
     align-items: center;
+    border-radius: 10%;
 }
 
 .skills_list progress {
     flex: 1;
-    margin-left: 1rem; /* Adjust spacing between skill text and progress bar */
+    margin-left: 1rem;
     height: 8px;
     appearance: none;
     border: none;
     background-color: #333;
+    animation: progressAnimation 3s ease forwards;
+    transform: scaleX(0);
+}
+
+@keyframes progressAnimation {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
 }
 
 .skills_list progress::-webkit-progress-bar {
