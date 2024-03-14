@@ -10,39 +10,22 @@ html {scroll-behavior: smooth;}
 a { color: var(--primary-color); }
 a:hover { color: var(--primary-color); }
 
-/* width */
 ::-webkit-scrollbar {
   width: 14px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1; 
 }
- 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
   background: var(--bs-dark); 
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
 
-
-/* 
-  @media (min-width: 544px)  {}
-  @media (min-width: 768px)  {}
-  @media (min-width: 992px)  {}
-  @media (min-width: 1200px) {}
-  @media (min-width: 1400px) {}
-  @media (min-width: 1600px) {} 
-*/
-
-/*
-* Custom Container
-*/
 .container-custom {
   width: 100%;
   padding: 0 1rem;
@@ -61,16 +44,10 @@ a:hover { color: var(--primary-color); }
   .container-custom { width: 1520px; }
 }
 
-/*
-* Main Header
-*/
 .header {
   z-index: 2;
 }
 
-/*
-* Flyout Navigation Bar
-*/
 #navbar {
   position: fixed;
   left: 0;
@@ -93,9 +70,6 @@ a:hover { color: var(--primary-color); }
   padding: 0 1rem;
 }
 
-/*
-* Hero Section
-*/
 .hero {
   position: relative;
   height: 100vh;
@@ -172,10 +146,6 @@ a:hover { color: var(--primary-color); }
   }
 }
 
-
-/*
-* Steps Section
-*/
 .steps {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -212,7 +182,7 @@ a:hover { color: var(--primary-color); }
 }
 
 .card-img-top {
-  height: 200px; /* Adjust the height as needed */
+  height: 200px;
   object-fit: cover;
 }
 
@@ -227,9 +197,7 @@ a:hover { color: var(--primary-color); }
   padding-bottom: 10px;
   text-align: center;
 } 
-/*
-* Footer
-*/
+
 .footer .border-highlight {
   border-top: 1px solid var(--primary-color-highlight);
 }
