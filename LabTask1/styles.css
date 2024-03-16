@@ -183,6 +183,44 @@ a:hover { color: var(--primary-color); }
     height: auto;
   }
 }
+.menu {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background-color: #1f1f1f;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.menu:hover {
+  display: block;
+}
+
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  margin-bottom: 10px;
+}
+
+.menu-list li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 20px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.menu-list li a:hover {
+  background-color: #333333;
+  border-radius: 5px;
+}
 
 .card {
   height: 100%;
@@ -218,3 +256,65 @@ a:hover { color: var(--primary-color); }
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+.bi:hover {
+  color: #f1f1f1;
+}
+
+.review small {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--c-brand);
+}
+
+.review-head {
+  position: relative;
+}
+
+.review-head::after {
+  content: "";
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  bottom: -14px;
+  background-color: white;
+  transform: rotate(45deg);
+}
+
+#contact {
+  position: relative;
+  z-index: 2;
+}
+
+#contact::after {
+  content: "";
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(rgba(var(--c-brand-rgb), 0.8), rgba(var(--c-brand-rgb), 0.8)), url(../images/counter.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#contact .form-control {
+  border-radius: 0;
+}
+
+#contact .form-control:focus {
+  box-shadow: none;
+  border-color: var(--c-brand);
+}
+
+.section-title h1,
+.section-title h2,
+.section-title h3,
+.section-title h4,
+.section-title h5,
+.section-title h6 {
+  font-size: 2rem; 
+  color: #333; 
+}
+
