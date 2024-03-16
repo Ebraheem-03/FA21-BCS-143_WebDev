@@ -85,13 +85,21 @@ a:hover { color: var(--primary-color); }
 
 .hero__video {
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translateX(-50%) translateY(-50%);
+  width: 100%; /* Make the video width 100% of its container */
+  height: 100%; /* Make the video height 100% of its container */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Ensure the entire video fits into the container */
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    width: 90%; /* Adjust container width for larger screens */
+    max-width: 1200px; /* Limit maximum container width for better readability */
+  }
+
+  /* Adjust other elements' styles as needed for larger screens */
 }
 
 .hero__overlay {
@@ -200,4 +208,14 @@ a:hover { color: var(--primary-color); }
 
 .footer .border-highlight {
   border-top: 1px solid var(--primary-color-highlight);
+}
+
+.card:hover {
+  transform: scale(1.05); /* Adjust the scale factor as desired */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.card-link:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
