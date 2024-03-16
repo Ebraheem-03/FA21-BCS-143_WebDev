@@ -63,9 +63,9 @@
 
   </section>
 
-  <section class="featured-destinations container">
+  <section id="featured-destinations" class="featured-destinations container section-padding bg-#FEF8F9 mb-5">
     <h2 class="section-title">Featured Destinations</h2>
-    <div class="row">
+    <div class="row section-padding bg-#FEF8F9 mb-5">
       <div class="col-md-4">
         <div class="card">
           <img src="images/paris.jpg" class="card-img-top" alt="Destination 1">
@@ -97,6 +97,39 @@
         </div>
       </div>
     </div>
+    <div class="row section-padding bg-#FEF8F9 mb-5">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="images/new_york.jpg" class="card-img-top" alt="Destination 4">
+          <div class="card-body">
+            <h5 class="card-title">New York, USA</h5>
+            <p class="card-text">Experience the hustle and bustle of New York City.</p>
+            <a href="#" class="mt-2 btn btn-lg btn-outline-dark">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="images/london.jpg" class="card-img-top" alt="Destination 5">
+          <div class="card-body">
+            <h5 class="card-title">London, UK</h5>
+            <p class="card-text">Explore the historic landmarks of London.</p>
+            <a href="#" class="mt-2 btn btn-lg btn-outline-dark">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="images/malibu.jpg" class="card-img-top" alt="Destination 6">
+          <div class="card-body">
+            <h5 class="card-title">Malibu, USA</h5>
+            <p class="card-text">Relax on the stunning beaches of Malibu.</p>
+            <a href="#" class="mt-2 btn btn-lg btn-outline-dark">Learn More</a>
+          </div>
+        </div>
+    </div>
+    </div>    
+      </section>
   </section>
 
   <section class="call-to-action py-5">
@@ -106,7 +139,7 @@
           <h2 class="text-center mb-3">Plan Your Next Adventure</h2>
           <p class="text-center mb-4">Start planning your dream vacation today.</p>
           <div class="text-center">
-            <a href="#" class="btn btn-lg btn-outline-dark">Explore Packages</a>
+            <a href="#featured-destinations" class="btn btn-lg btn-outline-dark" id="explore-button">Explore Packages</a>
           </div>
         </div>
       </div>
@@ -150,7 +183,7 @@
     </div>
 </section>
 
-  <section id="contact" class="section-padding bg-#FEF8F9">
+  <section id="contact"  class="section-padding bg-#FEF8F9 mb-5">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
@@ -222,8 +255,34 @@
         menu.style.display = 'none';
       });
     });
-  </script>
-  <script>
+
+    function scrollDestinations(direction) {
+      const container = document.querySelector('.featured-destinations .row');
+      const scrollAmount = 300;
+
+      if (direction === -1) {
+        container.scrollLeft -= scrollAmount;
+      } else if (direction === 1) {
+        container.scrollLeft += scrollAmount;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const exploreButton = document.getElementById('explore-button');
+      
+      exploreButton.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        
+        const destinationSection = document.getElementById('featured-destinations');
+        const destinationOffset = destinationSection.offsetTop;
+
+        window.scrollTo({
+          top: destinationOffset,
+          behavior: 'smooth'
+        });
+      });
+    });
+
     AOS.init({
       offset: 120,
       delay: 0,
@@ -234,6 +293,7 @@
       anchorPlacement: 'top-bottom',
     
     });
+
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
