@@ -5,25 +5,32 @@
   --bs-body-font-family: 'Montserrat', sans-serif;
 }
 
-html {scroll-behavior: smooth;}
+html {
+  scroll-behavior: smooth;
+}
 
-a { color: var(--primary-color); }
-a:hover { color: var(--primary-color); }
+a {
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
 
 ::-webkit-scrollbar {
   width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bs-dark); 
+  background: var(--bs-dark);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 .container-custom {
@@ -33,15 +40,21 @@ a:hover { color: var(--primary-color); }
 }
 
 @media (min-width: 1200px) {
-  .container-custom { width: 1140px; }
+  .container-custom {
+    width: 1140px;
+  }
 }
 
 @media (min-width: 1400px) {
-  .container-custom { width: 1340px; }
+  .container-custom {
+    width: 1340px;
+  }
 }
 
 @media (min-width: 1600px) {
-  .container-custom { width: 1520px; }
+  .container-custom {
+    width: 1520px;
+  }
 }
 
 .header {
@@ -54,7 +67,7 @@ a:hover { color: var(--primary-color); }
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(255,247,231);
+  background-color: rgb(255, 247, 231);
   z-index: 4;
 }
 
@@ -62,7 +75,7 @@ a:hover { color: var(--primary-color); }
   position: absolute;
   top: 20px;
   right: 16px;
-  background-color: rgbA(255,255,255,0.6);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .dropdown-nav__container {
@@ -79,7 +92,7 @@ a:hover { color: var(--primary-color); }
 
 @media (min-width: 1400px) {
   .hero__heading {
-      font-size: 3.2rem;
+    font-size: 3.2rem;
   }
 }
 
@@ -87,10 +100,10 @@ a:hover { color: var(--primary-color); }
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 @media (min-width: 768px) {
@@ -98,7 +111,6 @@ a:hover { color: var(--primary-color); }
     width: 90%;
     max-width: 1200px;
   }
-
 }
 
 .hero__overlay {
@@ -143,7 +155,6 @@ a:hover { color: var(--primary-color); }
   animation: bounce 1s infinite alternate;
 }
 
- 
 @keyframes bounce {
   from {
     transform: translateY(0px);
@@ -170,7 +181,7 @@ a:hover { color: var(--primary-color); }
 }
 
 .steps--background {
-  background-color: #FEF8F9;
+  background-color: #fef8f9;
 }
 
 @media (min-width: 544px) {
@@ -183,6 +194,7 @@ a:hover { color: var(--primary-color); }
     height: auto;
   }
 }
+
 .menu {
   position: fixed;
   top: 70px;
@@ -237,19 +249,19 @@ a:hover { color: var(--primary-color); }
   padding-bottom: 10px;
 }
 
-.call-to-action{
+.call-to-action {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-} 
+}
 
 .footer .border-highlight {
   border-top: 1px solid var(--primary-color-highlight);
 }
 
 .card:hover {
-  transform: scale(1.05); 
-  transition: transform 0.3s ease; 
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .card-link:hover {
@@ -315,14 +327,14 @@ a:hover { color: var(--primary-color); }
 .section-title h4,
 .section-title h5,
 .section-title h6 {
-  font-size: 2rem; 
-  color: #333; 
+  font-size: 2rem;
+  color: #333;
 }
 
 .review-person img.rounded-circle {
   width: 80px;
   height: 80px;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .review-person {
@@ -330,9 +342,9 @@ a:hover { color: var(--primary-color); }
 }
 
 .review {
-  display: flex; 
-  flex-direction: column; 
-  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 #featured-destinations {
@@ -390,4 +402,37 @@ a:hover { color: var(--primary-color); }
 
 #services .card-text {
   font-size: 1rem;
+}
+
+#headers {
+  background-color: #1f1f1f;
+}
+
+/* Adjustments */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #555;
+  color: white;
 }
