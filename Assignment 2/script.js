@@ -10,8 +10,16 @@ $(document).ready(function() {
       if (firstName === '' || lastName === '' || email === '' || subject === '' || message === '') {
         alert('Please fill out all required fields.');
       } else {
-        console.log('Form submitted successfully!');
+        $('#successModal').modal('show');
+
+        setTimeout(function() {
+          $('#successModal').modal('hide');
+          $('#firstName').val('');
+          $('#lastName').val('');
+          $('#email').val('');
+          $('#subject').val('');
+          $('#message').val('');
+        }, 2000);
       }
     });
-  });
-  
+});

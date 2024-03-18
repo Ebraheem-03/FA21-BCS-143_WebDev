@@ -408,7 +408,6 @@ a:hover {
   background-color: #1f1f1f;
 }
 
-/* Adjustments */
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -435,4 +434,36 @@ a:hover {
 .active {
   background-color: #555;
   color: white;
+}
+
+.non-active {
+  color: white;
+}
+
+.bg-image {
+  background-image: url('/LabTask1/images/bg-img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.popup-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 9999;
+  display: none;
+}
+
+.popup-message.show {
+  display: block;
+}
+
+.popup-message p {
+  margin: 0;
 }
