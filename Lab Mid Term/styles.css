@@ -1,0 +1,177 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+}
+
+.site-title {
+    font-family: 'Times New Roman', serif;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.container-fluid {
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.all-sections {
+    font-weight: bold;
+}
+
+.weather {
+    margin-top: 5px;
+}
+
+.temperature {
+    margin-right: 5px;
+}
+
+.day-date {
+    display: block;
+}
+
+.digital-replica {
+    font-style: italic;
+}
+
+.navbar {
+    margin-top: 20px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 9px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-subscribe,
+.btn-login {
+    margin-right: 10px;
+    background-color: maroon;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.search-icon {
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.separator {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.trending-row {
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.trending-row strong {
+    font-weight: bold;
+}
+
+.trending-link {
+    color: red;
+    text-decoration: none;
+    font-size: small;
+}
+
+.trending-link:hover {
+    text-decoration: underline;
+}
+
+.times-new-roman-bold {
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.card-title {
+    font-size: 1.2rem; /* Reduce font size for headlines */
+}
+
+.footer {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+}
+
+.footer-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-hr {
+    border-top: 2px solid black;
+    width: 250px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-list li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.btn-subscribe-now {
+    background-color: maroon;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.footer-line {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.small-column {
+    list-style: none;
+    padding: 0;
+}
+
+.small-column li {
+    margin-bottom: 10px;
+}
+
+.small-column li a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer-line {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
