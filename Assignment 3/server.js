@@ -27,6 +27,10 @@ app.get("/contact", (req, res) => {
     res.render("contact", { title: 'Contact'});
 });
 
+app.get("/ajax", (req, res) => {
+    res.render("ajax", { title: 'LabTask 2'});
+});
+
 app.post('/submit-form', (req, res) => {
 
     res.sendStatus(200);
