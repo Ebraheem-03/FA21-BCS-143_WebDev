@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "6649d34358106c406f21cf5b"
+  },
+  "name": "Visa Assistance",
+  "description": "Expert assistance in obtaining visas for your international travels.",
+  "price": 1500,
+  "image": "visa-approval.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649d34358106c406f21cf5c"
+  },
+  "name": "Hotel Booking",
+  "description": "Effortless hotel bookings tailored to your preferences and budget.",
+  "price": 1000,
+  "image": "hotel-booking.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649d34358106c406f21cf5d"
+  },
+  "name": "Air Travel Arrangements",
+  "description": "Seamless booking of flights to your desired destinations.",
+  "price": 2500,
+  "image": "air-travel.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649d34358106c406f21cf5e"
+  },
+  "name": "Travel Insurance",
+  "description": "Comprehensive travel insurance coverage for peace of mind during your trips.",
+  "price": 5000,
+  "image": "travel-insurance.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649d34358106c406f21cf5f"
+  },
+  "name": "Car Rentals",
+  "description": "Convenient car rental services to explore your destinations at your own pace.",
+  "price": 2000,
+  "image": "car-rentals.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649d34358106c406f21cf60"
+  },
+  "name": "Custom Tour Packages",
+  "description": "Tailored tour packages designed to suit your travel preferences and interests.",
+  "price": 3000,
+  "image": "custom-tour.jpg"
+}]

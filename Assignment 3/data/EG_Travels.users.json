@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "6649dc7258106c406f21cf6a"
+  },
+  "username": "John Doe",
+  "password": "password123",
+  "email": "john@example.com"
+},
+{
+  "_id": {
+    "$oid": "6649dc7258106c406f21cf6b"
+  },
+  "username": "Jane Smith",
+  "password": "abc@123",
+  "email": "jane@example.com"
+},
+{
+  "_id": {
+    "$oid": "6649dc7258106c406f21cf6c"
+  },
+  "username": "Michael Johnson",
+  "password": "securepassword",
+  "email": "michael@example.com"
+},
+{
+  "_id": {
+    "$oid": "6649dc7258106c406f21cf6d"
+  },
+  "username": "Emily Brown",
+  "password": "brownie123",
+  "email": "emily@example.com"
+},
+{
+  "_id": {
+    "$oid": "6649dc7258106c406f21cf6e"
+  },
+  "username": "David Wilson",
+  "password": "wilson123",
+  "email": "david@example.com"
+},
+{
+  "_id": {
+    "$oid": "6649dc7258106c406f21cf6f"
+  },
+  "username": "Sarah Johnson",
+  "password": "sarah_password",
+  "email": "sarah@example.com"
+}]

@@ -1,29 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/path/to/your/css">
-</head>
-<body>
-    <section id="services" class="services container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4 section-padding bg-#FEF8F9 mb-5">
-            <% services.forEach(service => { %>
-                <div class="col">
-                    <a href="#" class="text-decoration-none">
-                        <div class="card">
-                            <img src="<%= service.imageUrl %>" class="card-img-top" alt="<%= service.name %>">
-                            <div class="card-body">
-                                <h5 class="card-title"><%= service.name %></h5>
-                                <p class="card-text"><%= service.description %></p>
-                                <p class="card-text">Price: $<%= service.price %></p>
-                            </div>
-                        </div>
-                    </a>
+<section id="services" class="services container">
+    <h2 class="section-title">Our Services</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4 section-padding bg-#FEF8F9 mb-5">
+        <% services.forEach(service => { %>
+            <div class="col">
+                <div class="card">
+                    <img src="/images/service images/<%= service.image %>" class="card-img-top" alt="<%= service.name %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= service.name %></h5>
+                        <p class="card-text"><%= service.description %></p>
+                        <p class="card-text">Price: <%= service.price %></p>
+                    </div>
                 </div>
-            <% }); %>
-        </div>
-    </section>
-</body>
-</html>
+            </div>
+        <% }) %>
+    </div>
+</section>

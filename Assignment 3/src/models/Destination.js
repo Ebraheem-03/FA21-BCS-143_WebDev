@@ -5,8 +5,7 @@ const destinationSchema = new Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
     location: { type: String, required: true },
-    imageUrl: { type: String },
-    createdAt: { type: Date, default: Date.now }
+    image: {type: String}
 });
 
 const Destination = mongoose.model('Destination', destinationSchema);

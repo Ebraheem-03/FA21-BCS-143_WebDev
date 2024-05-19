@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "6649e92558106c406f21cf79"
+  },
+  "name": "Paris, France",
+  "description": "Explore the romantic streets of Paris.",
+  "location": "Paris, France",
+  "image": "paris.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649e92558106c406f21cf7a"
+  },
+  "name": "Tokyo, Japan",
+  "description": "Discover the vibrant culture of Tokyo.",
+  "location": "Tokyo, Japan",
+  "image": "tokyo.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649e92558106c406f21cf7b"
+  },
+  "name": "Rio de Janeiro, Brazil",
+  "description": "Experience the energy of Rio de Janeiro.",
+  "location": "Rio de Janeiro, Brazil",
+  "image": "rio.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649e92558106c406f21cf7c"
+  },
+  "name": "New York, USA",
+  "description": "Experience the hustle and bustle of New York City.",
+  "location": "New York, USA",
+  "image": "new-york.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649e92558106c406f21cf7d"
+  },
+  "name": "London, UK",
+  "description": "Explore the historic landmarks of London.",
+  "location": "London, UK",
+  "image": "london.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649e92558106c406f21cf7e"
+  },
+  "name": "Rome, Italy",
+  "description": "Discover the timeless allure of Rome amid its historic treasures and vibrant streets.",
+  "location": "Rome, Italy",
+  "image": "rome.jpg"
+}]
