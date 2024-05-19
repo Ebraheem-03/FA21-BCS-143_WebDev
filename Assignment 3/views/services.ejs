@@ -1,71 +1,29 @@
-<section id="services" class="services container">
-    <h2 class="section-title">Our Services</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4 section-padding bg-#FEF8F9 mb-5">
-      <div class="col">
-        <a href="visa.html" class="text-decoration-none">
-          <div class="card">
-            <img src="/images/service images/visa-approval.jpg" class="card-img-top" alt="Visas">
-            <div class="card-body">
-              <h5 class="card-title">Visa Assistance</h5>
-              <p class="card-text">Expert assistance in obtaining visas for your international travels.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="hotel-booking.html" class="text-decoration-none">
-          <div class="card">
-            <img src="/images/service images/hotel-booking.jpg" class="card-img-top" alt="Hotel Booking">
-            <div class="card-body">
-              <h5 class="card-title">Hotel Booking</h5>
-              <p class="card-text">Effortless hotel bookings tailored to your preferences and budget.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="air-travels.html" class="text-decoration-none">
-          <div class="card">
-            <img src="/images/service images/air-travel.jpg" class="card-img-top" alt="Air Travels">
-            <div class="card-body">
-              <h5 class="card-title">Air Travel Arrangements</h5>
-              <p class="card-text">Seamless booking of flights to your desired destinations.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="travel-insurance.html" class="text-decoration-none">
-          <div class="card">
-            <img src="/images/service images/travel-insurance.jpg" class="card-img-top" alt="Travel Insurance">
-            <div class="card-body">
-              <h5 class="card-title">Travel Insurance</h5>
-              <p class="card-text">Comprehensive travel insurance coverage for peace of mind during your trips.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="car-rentals.html" class="text-decoration-none">
-          <div class="card">
-            <img src="/images/service images/car-rentals.jpg" class="card-img-top" alt="Car Rentals">
-            <div class="card-body">
-              <h5 class="card-title">Car Rentals</h5>
-              <p class="card-text">Convenient car rental services to explore your destinations at your own pace.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="tour-packages.html" class="text-decoration-none">
-          <div class="card">
-            <img src="/images/service images/custom-tour.jpg" class="card-img-top" alt="Tour Packages">
-            <div class="card-body">
-              <h5 class="card-title">Custom Tour Packages</h5>
-              <p class="card-text">Tailored tour packages designed to suit your travel preferences and interests.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/path/to/your/css">
+</head>
+<body>
+    <section id="services" class="services container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4 section-padding bg-#FEF8F9 mb-5">
+            <% services.forEach(service => { %>
+                <div class="col">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card">
+                            <img src="<%= service.imageUrl %>" class="card-img-top" alt="<%= service.name %>">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= service.name %></h5>
+                                <p class="card-text"><%= service.description %></p>
+                                <p class="card-text">Price: $<%= service.price %></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% }); %>
+        </div>
+    </section>
+</body>
+</html>
