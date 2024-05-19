@@ -27,6 +27,10 @@ app.get("/contact", (req, res) => {
     res.render("contact", { title: 'Contact'});
 });
 
+app.get("/login", (req, res) => {
+    res.render("sign-in", { title: 'Login'});
+});
+
 app.get("/ajax", (req, res) => {
     res.render("ajax", { title: 'LabTask 2'});
 });
