@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const ejsLayouts = require('express-ejs-layouts');
 const routes = require('./src/routes');
+const adminRoutes = require('./src/routes/api/admin');
 
 // Middleware
 app.set('view engine', 'ejs');
@@ -21,9 +22,9 @@ mongoose.connect('mongodb://localhost:27017/EG_Travels', {
     console.error('DB Connection Error:', err);
 });
 
-app.use(bodyParser.urlencoded({ extended: true }));
 // Use Routes
 app.use('/', routes);
+app.use('/api/admin', adminRoutes);
 
 // Start Server
 const port = process.env.PORT || 3000;

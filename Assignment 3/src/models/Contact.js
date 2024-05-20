@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const contactSchema = new Schema({
-    firstname: { type: String},
-    lastname: { type: String},
+    firstName: { type: String},
+    lastName: { type: String},
     email: { type: String},
     subject: { type: String},
     message: { type: String},

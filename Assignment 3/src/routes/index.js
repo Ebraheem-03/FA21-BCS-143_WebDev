@@ -45,17 +45,6 @@ router.get('/contact', (req, res) => {
     res.render('contact', { title: 'Contact' });
 });
 
-router.post('/contact', async (req, res) => {
-    try {
-        const { firstname, lastname, email, subject, message } = req.body;
-        const newContact = new Contact({ firstname, lastname, email, subject, message });
-        await newContact.save();
-        res.render('contact', { title: 'Contact', message: 'Your message has been sent successfully!' });
-    } catch (error) {
-        res.render('contact', { title: 'Contact', message: 'There was an error submitting your message. Please try again.' });
-    }
-});
-
 router.get('/login', (req, res) => {
     res.render('sign-in', { title: 'Login' });
 });
@@ -67,11 +56,9 @@ router.get('/ajax', (req, res) => {
 router.post('/submit-form', async (req, res) => {
     try {
         // Extract form data
-        const { firstname, lastname, email, subject, message } = req.body;
-        
+        const { firstName, lastName, email, subject, message } = req.body;
         // Create a new Contact instance
-        const newContact = new Contact({ firstname, lastname, email, subject, message });
-
+        const newContact = new Contact({ firstName, lastName, email, subject, message });
         // Save the new contact to the database
         await newContact.save();
 
