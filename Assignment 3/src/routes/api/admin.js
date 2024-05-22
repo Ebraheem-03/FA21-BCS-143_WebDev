@@ -1,5 +1,27 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+
+// Configure Cloudinary
+cloudinary.config({
+    cloud_name: 'dwzg1fzvi',
+    api_key: '536759466158152',
+    api_secret: 'rLFp_Ln-rdh-DoWSUtdiw7yGQyU'
+});
+
+// Configure multer storage with Cloudinary
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: 'EG_Travels',
+        format: async (req, file) => 'jpg', // supports promises as well
+        public_id: (req, file) => file.originalname.split('.')[0],
+    },
+});
+
+const parser = multer({ storage: storage });
 
 // Require models
 const Destination = require('../../models/Destination');
@@ -23,10 +45,12 @@ router.get('/services/new', (req, res) => {
 });
 
 // Create a new service
-router.post('/services', async (req, res) => {
+router.post('/services', parser.single('image'), async (req, res) => {
     try {
         const { name, description, price } = req.body;
-        const newService = new Service({ name, description, price });
+        const imageUrl = req.file.path; // Cloudinary URL
+        const imageId = req.file.filename; // Cloudinary image ID
+        const newService = new Service({ name, description, price, imageUrl, imageId });
         await newService.save();
         res.redirect('/api/admin/services');
     } catch (error) {
@@ -45,10 +69,21 @@ router.get('/services/edit/:id', async (req, res) => {
 });
 
 // Update a service
-router.post('/services/edit/:id', async (req, res) => {
+router.post('/services/edit/:id', parser.single('image'), async (req, res) => {
     try {
         const { name, description, price } = req.body;
-        await Service.findByIdAndUpdate(req.params.id, { name, description, price });
+        const updateData = { name, description, price };
+
+        if (req.file) {
+            const service = await Service.findById(req.params.id);
+            if (service.imageId) {
+                await cloudinary.uploader.destroy(service.imageId); // Delete old image from Cloudinary
+            }
+            updateData.imageUrl = req.file.path; // Update image URL if a new image is uploaded
+            updateData.imageId = req.file.filename; // Update image ID
+        }
+
+        await Service.findByIdAndUpdate(req.params.id, updateData);
         res.redirect('/api/admin/services');
     } catch (error) {
         res.status(500).send('Error updating service');
@@ -58,6 +93,10 @@ router.post('/services/edit/:id', async (req, res) => {
 // Delete a service
 router.post('/services/delete/:id', async (req, res) => {
     try {
+        const service = await Service.findById(req.params.id);
+        if (service.imageId) {
+            await cloudinary.uploader.destroy(service.imageId); // Delete image from Cloudinary
+        }
         await Service.findByIdAndDelete(req.params.id);
         res.redirect('/api/admin/services');
     } catch (error) {
@@ -83,10 +122,12 @@ router.get('/destinations/new', (req, res) => {
 });
 
 // Create a new destination
-router.post('/destinations', async (req, res) => {
+router.post('/destinations', parser.single('image'), async (req, res) => {
     try {
         const { name, description, location } = req.body;
-        const newDestination = new Destination({ name, description, location });
+        const imageUrl = req.file.path; // Cloudinary URL
+        const imageId = req.file.filename; // Cloudinary image ID
+        const newDestination = new Destination({ name, description, location, imageUrl, imageId });
         await newDestination.save();
         res.redirect('/api/admin/destinations');
     } catch (error) {
@@ -105,10 +146,21 @@ router.get('/destinations/edit/:id', async (req, res) => {
 });
 
 // Update a destination
-router.post('/destinations/edit/:id', async (req, res) => {
+router.post('/destinations/edit/:id', parser.single('image'), async (req, res) => {
     try {
         const { name, description, location } = req.body;
-        await Destination.findByIdAndUpdate(req.params.id, { name, description, location });
+        const updateData = { name, description, location };
+
+        if (req.file) {
+            const destination = await Destination.findById(req.params.id);
+            if (destination.imageId) {
+                await cloudinary.uploader.destroy(destination.imageId); // Delete old image from Cloudinary
+            }
+            updateData.imageUrl = req.file.path; // Update image URL if a new image is uploaded
+            updateData.imageId = req.file.filename; // Update image ID
+        }
+
+        await Destination.findByIdAndUpdate(req.params.id, updateData);
         res.redirect('/api/admin/destinations');
     } catch (error) {
         res.status(500).send('Error updating destination');
@@ -118,6 +170,10 @@ router.post('/destinations/edit/:id', async (req, res) => {
 // Delete a destination
 router.post('/destinations/delete/:id', async (req, res) => {
     try {
+        const destination = await Destination.findById(req.params.id);
+        if (destination.imageId) {
+            await cloudinary.uploader.destroy(destination.imageId); // Delete image from Cloudinary
+        }
         await Destination.findByIdAndDelete(req.params.id);
         res.redirect('/api/admin/destinations');
     } catch (error) {

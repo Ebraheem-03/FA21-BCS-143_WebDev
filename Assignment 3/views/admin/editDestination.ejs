@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <h1><%= title %></h1>
-    <form action="/api/admin/destinations/edit/<%= destination._id %>" method="POST">
+    <form action="/api/admin/destinations/edit/<%= destination._id %>" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" name="name" value="<%= destination.name %>" required>
@@ -13,6 +13,14 @@
             <label for="location" class="form-label">Location</label>
             <input type="text" class="form-control" id="location" name="location" value="<%= destination.location %>" required>
         </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" class="form-control" id="image" name="image">
+            <% if (destination.imageUrl) { %>
+                <img src="<%= destination.imageUrl %>" alt="Current Image" class="mt-3" style="max-width: 200px;">
+            <% } %>
+        </div>
         <button type="submit" class="btn btn-primary">Update Destination</button>
     </form>
+    <hr>
 </div>

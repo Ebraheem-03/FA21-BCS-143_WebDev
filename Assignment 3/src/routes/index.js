@@ -8,6 +8,8 @@ const Service = require('../models/Service');
 const Review = require('../models/Review');
 const Contact = require('../models/Contact');
 
+const ITEMS_PER_PAGE = 6;
+
 // Routes
 router.get('/', (req, res) => {
     res.render('landingpage', { title: 'Home' });
@@ -15,8 +17,18 @@ router.get('/', (req, res) => {
 
 router.get('/destinations', async (req, res) => {
     try {
-        const destinations = await Destination.find();
-        res.render('destinations', { title: 'Destinations', destinations });
+        const page = parseInt(req.query.page) || 1;
+        const totalDestinations = await Destination.countDocuments();
+        const totalPages = Math.ceil(totalDestinations / ITEMS_PER_PAGE);
+        const destinations = await Destination.find()
+            .skip((page - 1) * ITEMS_PER_PAGE)
+            .limit(ITEMS_PER_PAGE);
+        res.render('destinations', { 
+            title: 'Destinations', 
+            destinations, 
+            currentPage: page, 
+            totalPages 
+        });
     } catch (error) {
         res.status(500).send('Error fetching destinations');
     }
@@ -24,8 +36,18 @@ router.get('/destinations', async (req, res) => {
 
 router.get('/services', async (req, res) => {
     try {
-        const services = await Service.find();
-        res.render('services', { title: 'Services', services });
+        const page = parseInt(req.query.page) || 1;
+        const totalServices = await Service.countDocuments();
+        const totalPages = Math.ceil(totalServices / ITEMS_PER_PAGE);
+        const services = await Service.find()
+            .skip((page - 1) * ITEMS_PER_PAGE)
+            .limit(ITEMS_PER_PAGE);
+        res.render('services', { 
+            title: 'Services', 
+            services, 
+            currentPage: page, 
+            totalPages 
+        });
     } catch (error) {
         res.status(500).send('Error fetching services');
     }
