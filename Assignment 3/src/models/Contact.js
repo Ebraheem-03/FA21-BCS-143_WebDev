@@ -7,7 +7,7 @@ const contactSchema = new Schema({
     email: { type: String},
     subject: { type: String},
     message: { type: String},
-    createdAt: { type: Date, default: Date.now }
+    createdAt: { type: Date, default: Date.now },
 });
 
 const Contact = mongoose.model('Contact', contactSchema);
