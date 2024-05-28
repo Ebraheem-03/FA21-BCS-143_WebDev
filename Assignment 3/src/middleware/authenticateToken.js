@@ -1,22 +1,23 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET;
 
 function authenticateToken(req, res, next) {
-    const token = req.cookies.token;
+    const token = req.cookies.token || req.headers['authorization'];
     if (!token) {
-        req.isAuthenticated = false;
-        return next();
+        return res.status(401).send('Access Denied: No Token Provided');
     }
 
-    jwt.verify(token, JWT_SECRET, (err, user) => {
-        if (err) {
-            req.isAuthenticated = false;
-            return next();
+    try {
+        const secret = process.env.JWT_SECRET;
+        if (!secret) {
+            throw new Error('Secret key not found');
         }
-        req.user = user;
-        req.isAuthenticated = true;
+        const verified = jwt.verify(token, secret);
+        req.user = verified;
         next();
-    });
+    } catch (err) {
+        console.error(err);
+        res.status(400).send('Invalid Token');
+    }
 }
 
 module.exports = authenticateToken;

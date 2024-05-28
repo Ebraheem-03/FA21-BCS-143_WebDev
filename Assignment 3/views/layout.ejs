@@ -14,8 +14,6 @@
   <link rel="icon" type="image/jpg" href="/images/Logo.jpg" alt="Logo">
 </head>
 <body>
-
-  <!-- Header Section -->
   <header id="headers" class="header p-3 position-sticky start-0 top-0 end-0">
     <div class="d-flex justify-content-between align-items-center">
       <a href="/" class="text-decoration-none text-white fs-5 fw-bold">EG Travels</a>
@@ -33,11 +31,20 @@
           <li class="nav-item">
             <a class="nav-link non-active" href="/reviews">Customer Reviews</a>
           </li>
+          <% if (user && user.isAdmin === 'admin') { %>
+            <li class="nav-item">
+              <a class="nav-link non-active" href="/api/admin/services">Manage Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link non-active" href="/api/admin/destinations">Manage Destinations</a>
+            </li>
+          <% } %>
         </ul>
-    
+
         <div class="d-flex align-items-center">
           <a href="/contact" class="btn btn-lg btn-outline-light me-4 mx-4">Contact Us</a>
           <% if (user) { %>
+            <span class="text-white me-4">Welcome, <%= user.username %></span>
             <a href="/logout" class="btn btn-lg btn-outline-light me-4 mx-4">Logout</a>
           <% } else { %>
             <a href="/login" class="btn btn-lg btn-outline-light me-4 mx-4">Sign In</a>
@@ -57,19 +64,31 @@
           <li><a href="/contact">Contact Us</a></li>
         </ul>
       </div>
+    </div>
   </header>
 
-  <!-- Main Content -->
+  <div class="container mt-4">
+    <% if (success_msg) { %>
+        <div class="popup-message" id="success-popup">
+            <%= success_msg %>
+        </div>
+    <% } %>
+    <% if (error_msg) { %>
+        <div class="popup-message" id="error-popup">
+            <%= error_msg %>
+        </div>
+    <% } %>
+  </div>
+
   <%- body %>
 
-  <!-- Footer Section -->
   <footer class="footer bg-dark text-white">
     <div class="container-custom d-flex justify-content-between align-items-center py-3 border-highlight">
       <div class="col-md-4 d-flex align-items-center">
         <a href="/" class="me-2 text-muted text-decoration-none nav-link">
           <i class="bi bi-cup"></i>
           <span>&copy; 2022 EG Travels</span>
-        </a> 
+        </a>
       </div>
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex text-white">
         <li class="ms-3"><a class="text-muted nav-link" href="#"><i class="bi bi-twitter"></i></a></li>
@@ -79,6 +98,26 @@
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const successPopup = document.getElementById('success-popup');
+        const errorPopup = document.getElementById('error-popup');
+
+        if (successPopup) {
+            successPopup.classList.add('show');
+            setTimeout(() => {
+                successPopup.classList.remove('show');
+            }, 3000);
+        }
+
+        if (errorPopup) {
+            errorPopup.classList.add('show');
+            setTimeout(() => {
+                errorPopup.classList.remove('show');
+            }, 3000);
+        }
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
