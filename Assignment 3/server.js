@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const ejsLayouts = require('express-ejs-layouts');
 const flash = require('connect-flash');
+const jwt = require('jsonwebtoken'); // Add this line
 
 // Initialize app
 const app = express();
@@ -18,6 +19,23 @@ app.use(expressSession({ secret: "secret" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(flash());
+
+app.use((req, res, next) => {
+    const token = req.cookies.token;
+    if (token) {
+        try {
+            const secret = process.env.JWT_SECRET;
+            const verified = jwt.verify(token, secret);
+            req.user = verified;
+            res.locals.user = verified;
+        } catch (err) {
+            console.error('Invalid Token:', err);
+        }
+    } else {
+        res.locals.user = null;
+    }
+    next();
+});
 
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');

@@ -3,10 +3,12 @@
   --primary-color-highlight: #233D54;
   --bs-body-bg: #FBF0F6;
   --bs-body-font-family: 'Montserrat', sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
+  --form-bg-color: #fff;
+  --form-border-color: #e6e6e6;
+  --form-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --btn-bg-color: #0a1118;
+  --btn-hover-bg-color: #233D54;
+  --btn-text-color: #fff;
 }
 
 a {
@@ -15,6 +17,137 @@ a {
 
 a:hover {
   color: var(--primary-color);
+}
+
+
+.auth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bs-body-bg);
+}
+
+.auth-content {
+  background-color: var(--form-bg-color);
+  border: 1px solid var(--form-border-color);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: var(--form-shadow);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid var(--form-border-color);
+  border-radius: 5px;
+}
+
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+.form-group .label-agree-term {
+  display: inline-block;
+  margin-left: 5px;
+  color: #999;
+}
+
+.form-group .label-agree-term a {
+  color: var(--primary-color);
+}
+
+.form-group .label-agree-term a:hover {
+  text-decoration: underline;
+}
+
+.form-button {
+  text-align: center;
+}
+
+.form-submit {
+  padding: 10px 20px;
+  background-color: var(--btn-bg-color);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+  background-color: var(--btn-hover-bg-color);
+}
+
+.link-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.link-section .link-label {
+  color: #999;
+}
+
+.link-section .auth-link {
+  color: var(--primary-color);
+}
+
+.link-section .auth-link:hover {
+  text-decoration: underline;
+}
+
+.social-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-login .social-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #999;
+}
+
+.socials {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials li a {
+  color: var(--primary-color);
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.socials li a:hover {
+  color: var(--primary-color-highlight);
 }
 
 ::-webkit-scrollbar {
