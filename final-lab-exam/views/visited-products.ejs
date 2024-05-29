@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <h1>Visited Products</h1>
+  <% if (products.length === 0) { %>
+      <p>No products visited yet.</p>
+  <% } else { %>
+      <div class="row">
+          <% products.forEach(product => { %>
+              <div class="col-md-4 mb-4">
+                  <div class="card product-card shadow-sm">
+                      <div class="card-body">
+                          <h3 class="card-title"><%= product.name %></h3>
+                          <p class="card-text"><%= product.description %></p>
+                          <p class="card-text"><strong>Price: $<%= product.price.toFixed(2) %></strong></p>
+                          <a href="/products/<%= product._id %>" class="btn btn-primary">View Product</a>
+                      </div>
+                  </div>
+              </div>
+          <% }) %>
+      </div>
+  <% } %>
+</div>

@@ -1,0 +1,20 @@
+<section class="hero">
+  <div class="hero__overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" loading="lazy" class="hero__video">
+      <source src="images/landing_page_video.mp4" type="video/mp4">
+  </video>
+  <div id="home" class="hero__content h-100 container-custom position-relative">
+      <div class="d-flex h-100 align-items-center hero__content-width">
+          <div class="text-white">
+              <h1 class="hero__heading fw-bold mb-4">Welcome to EG Travels</h1>
+              <p class="lead mb-4">Dream, Explore, Discover</p>
+              <% if (user) { %>
+                  <span class="mt-2 btn btn-lg btn-outline-light" role="button"><%= user.username %></span>
+              <% } else { %>
+                  <a href="/register" class="mt-2 btn btn-lg btn-outline-light" role="button">Register Now</a>
+              <% } %>
+              <a href="/ajax" class="mt-2 btn btn-lg btn-outline-light" role="button">Learn More</a>
+          </div>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "6649fdb858106c406f21cf87"
+  },
+  "user": "6649dc7258106c406f21cf6a",
+  " destination": "6649e92558106c406f21cf79",
+  " role": "Happy Traveller",
+  " description": "Our trip to Paris with EG Travels was unforgettable. The accommodations were top-notch  and the guided tours provided insightful perspectives on the city's rich history and culture.",
+  " image": "avatar-1.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649fdb858106c406f21cf88"
+  },
+  "user": "6649dc7258106c406f21cf6b",
+  " destination": "6649e92558106c406f21cf7e",
+  " role": "Adventurous Explorer",
+  " description": "Our journey to Venice organized by EG Travels was absolutely magical. The gondola ride through the serene canals and the exquisite Venetian cuisine made it an unforgettable experience.",
+  " image": "avatar-2.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649fdb858106c406f21cf89"
+  },
+  "user": "6649dc7258106c406f21cf6c",
+  " destination": "6649e92558106c406f21cf7e",
+  " role": "Cultural Enthusiast",
+  " description": "Our trip to Rome with EG Travels exceeded all expectations. From the majestic Colosseum to the charming streets of Trastevere,  every moment was filled with wonder and discovery.",
+  " image": "avatar-3.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649fdb858106c406f21cf8a"
+  },
+  "user": "6649dc7258106c406f21cf6d",
+  " destination": "6649e92558106c406f21cf7a",
+  " role": "Explorer Extraordinaire",
+  " description": "Our experience in Tokyo organized by EG Travels was beyond amazing. The blend of traditional Japanese culture and modern innovation left us in awe. Can't wait to return!",
+  " image": "avatar-4.jpg"
+},
+{
+  "_id": {
+    "$oid": "6649fdb858106c406f21cf8b"
+  },
+  "user": "6649dc7258106c406f21cf6e",
+  " destination": "6649e92558106c406f21cf7d",
+  " role": "Enthusiastic Voyager",
+  " description": "Our journey to Rio with EG Travels was nothing short of spectacular. From the vibrant energy of La Rambla to the breathtaking architecture of Sagrada Família, every moment was a delight.",
+  " image": "avatar-5.jpg\""
+},
+{
+  "_id": {
+    "$oid": "6649fdb858106c406f21cf8c"
+  },
+  "user": "6649dc7258106c406f21cf6f",
+  " destination": "6649e92558106c406f21cf7c",
+  " role": "Nature Enthusiast",
+  " description": "Our trip to Sydney with EG Travels was absolutely fantastic. From the stunning views of the Sydney Opera House to the laid-back vibe of Bondi Beach, it was an unforgettable experience.",
+  " image": "avatar-6.jpg"
+}]

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+</head>
+<body>
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-content">
+                <div class="auth-form">
+                    <h2 class="form-title">Sign Up</h2>
+                    <form method="POST" action="/register" class="register-form" id="register-form">
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="username" id="your_name" placeholder="Your Name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="your_email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="your_email" placeholder="Your Email" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password" id="your_pass" placeholder="Password" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the <a href="#" class="term-service">Terms of Service</a></label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Sign Up"/>
+                        </div>
+                    </form>
+                    <div class="link-section">
+                        <span class="link-label">Already have an account? </span>
+                        <a href="/login" class="auth-link">Log In</a>
+                    </div>
+                    <div class="social-login">
+                        <span class="social-label">Or sign up with</span>
+                        <ul class="socials">
+                            <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                            <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                            <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
